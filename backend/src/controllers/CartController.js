@@ -3,10 +3,11 @@ const redis = require('../databases/redis');
 module.exports = {
     async newCart(request, response){
         const user = request.params.user;
-        const {id,amount} = request.body;
+        const {id,amount,price} = request.body;
         const object = {
            id,
-           amount
+           amount,
+           price
         }
 
         redis.setex(user,3600, JSON.stringify(object), (err,res) => {

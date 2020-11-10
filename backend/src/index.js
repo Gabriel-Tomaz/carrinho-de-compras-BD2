@@ -2,6 +2,7 @@ const express = require('express');
 
 const postgres = require('./databases/postgres');
 const redis = require('./databases/redis');
+const mongo = require('./databases/mongo');
 const routes = require('./routes');
 
 const app = express();
